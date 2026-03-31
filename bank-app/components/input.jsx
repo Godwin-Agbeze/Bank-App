@@ -2,10 +2,10 @@ import { TextInput, StyleSheet} from "react-native";
 
 
 
-const Input = ({title, type}) => {
+const Input = ({title, type, value,onChangeText}) => {
     return(
         
-        <TextInput keyboardType={type} placeholder={title} style={styles.TextInput}></TextInput>
+        <TextInput keyboardType={type} placeholder={title} placeholderTextColor="#0000006d" value={value} onChangeText={onChangeText} style={styles.TextInput}></TextInput>
     )
 }
 
@@ -15,9 +15,10 @@ export default Input;
 
 const styles = StyleSheet.create({
     TextInput : {
-        borderRadius: 15,
-        borderColor:"blue", 
-        borderWidth: 1, 
+        borderRadius: 10,
+        borderColor:"#000000a0", 
+        borderWidth: 0.5, 
         paddingHorizontal : 10,
+        
     }
 })

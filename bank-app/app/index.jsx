@@ -20,14 +20,14 @@ export default function HomeScreen (){
           <View style={styles.bottom}>
             <Input title="Email" />
             <Input  title="Password" />
-            <Button text="Log In"/>
+            <Button title="Log In"/>
             <TouchableOpacity>
               <Text style={styles.forgotText}>Forgot Password?</Text>
 
             </TouchableOpacity>
             
           
-          <TouchableOpacity onPress={() => router.push("")} style={{flexDirection:"row",alignSelf:"center"}}>
+          <TouchableOpacity onPress={()=> router.push("/signup")} style={{flexDirection:"row",alignSelf:"center"}}>
               <Text style={{color:"gray"}}>New to Bank Apps?</Text>
               <Text style={{color:"#3a5fe6", textDecorationLine:"underline"}}> Sign Up</Text>
           </TouchableOpacity>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
 
   top : {
-    flex : 0.5,
+    flex : 0.7,
     backgroundColor: "rgba(8, 10, 140, 0.87)",
     justifyContent:"center",
     alignItems: "center",
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   },
 
   topText : {
+    
     color : "#fff",
     fontWeight: "bold",
     fontSize: 30,
