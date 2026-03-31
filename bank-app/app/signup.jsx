@@ -18,9 +18,9 @@ import { router } from 'expo-router';
 const SignUp = () => {
 
     const [formData, setFormData] = useState({
-        name : " ",
+        name : "",
         bankAccount : "",
-        email : " ",
+        email : "",
         password : ""
 
     })
@@ -37,21 +37,25 @@ const SignUp = () => {
                     <View style={styles.bottom}>
                                 <Input
                                     value={formData.name}
+                                    type="default"
                                     onChangeText={(text) => setFormData(prev => ({ ...prev, name: text }))}
                                     title="Your Name"
                                 />
                                 <Input
                                     value={formData.bankAccount}
+                                    type="numeric"
                                     onChangeText={(text) => setFormData(prev => ({ ...prev, bankAccount: text }))}
                                     title="Bank Account"
                                 />
                                 <Input
                                     value={formData.email}
+                                    type="email-address"
                                     onChangeText={(text) => setFormData(prev => ({ ...prev, email: text }))}
                                     title="Email"
                                 />
                                 <Input
                                     value={formData.password}
+                                    security={true}
                                     onChangeText={(text) => setFormData(prev => ({ ...prev, password: text }))}
                                     title="Password"
                                 />
@@ -60,16 +64,17 @@ const SignUp = () => {
                                 <View style={{flexDirection:"row", paddingHorizontal:10, alignItems:"center"}}>
                                     <TouchableOpacity onPress={() => setChecked(!checked)} 
                                     style={{
-                                        Width:25,
+                                        width:25,
                                         height:30,                                       
                                         borderWidth:1,
                                         borderRadius:2, 
                                         marginRight:10,
-                                        borderColor:"#000000a0", 
+                                        backgroundColor : checked ? "#007BFF" : "transparent",
+                                        borderColor : checked ? "#007BFF"  : "#000000a0"
                                         
 
                                     }}>
-                                        <Entypo name="check" size={24} color="black" />
+                                        <Entypo name="check" size={24} color="white" />
                                     </TouchableOpacity>
                                     <Text style={{marginBottom:5, color:"#000000b4"}}>By signiing up, you agree to Banks Term of Use & Privacy </Text>
                                 </View>
