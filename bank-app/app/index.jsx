@@ -3,14 +3,19 @@ import { StatusBar, View,Text, StyleSheet, TouchableOpacity, Image} from "react-
 import Input from "../components/input"
 import Button from "../components/button"
 import { router } from "expo-router"
+import { useState } from "react"
 
 
 
 export default function HomeScreen (){
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
 
       <SafeAreaView style={styles.container}>
-        <StatusBar backgroundColor="rgba(8, 10, 140, 0.87)"/>
+        <StatusBar backgroundColor=" rgba(8, 10, 140, 0.87)"/>
           <View style={styles.top}>
             <Image style={{width:150, height:150, tintColor:"#FFF"}} source={require("../assets/images/Fast.png")}/>
             <Text style={styles.topText}>WELCOME</Text>
@@ -18,8 +23,8 @@ export default function HomeScreen (){
           </View>
 
           <View style={styles.bottom}>
-            <Input title="Email" />
-            <Input  title="Password" />
+            <Input value={email} type="email-address" onChangeText={setEmail} title="Email" />
+            <Input type="default" onChangeText={setPassword} value={password} security={true} title="Password" />
             <Button text="Log In"/>
             <TouchableOpacity>
               <Text style={styles.forgotText}>Forgot Password?</Text>
