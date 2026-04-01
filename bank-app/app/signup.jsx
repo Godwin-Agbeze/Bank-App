@@ -80,7 +80,7 @@ const SignUp = () => {
                                 </View>
 
                                 <View style={{flexDirection:"row", justifyContent:"center", flex:1, marginTop:20}}>
-                                        <Button title="SIGN UP"/>
+                                        <Button title="SIGN UP" onPress={() => router.back("/index")} />
                                         <Text style={{color: "#000", marginHorizontal:10}}>or</Text>
                                        <TransparentButton title="CANCEL" onPress={() => router.back("/index")} />
                                 </View>
