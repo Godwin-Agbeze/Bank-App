@@ -1,6 +1,9 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, StyleSheet,StatusBar, Image, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet,StatusBar, Image, TouchableOpacity, ScrollView} from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { router } from 'expo-router';
 
 
 
@@ -12,12 +15,15 @@ const HomePage = () => {
        
         
               <SafeAreaView style={styles.container}>
+                <ScrollView>
                 <StatusBar backgroundColor="rgba(8, 10, 140, 0.87)"/>
                 <View style={{flexDirection:"row",justifyContent:"space-between", paddingHorizontal:20, backgroundColor:"rgba(8, 10, 140, 0.87)"}}>
                         <TouchableOpacity>
                             <Ionicons name="reorder-three-outline" size={24} color="#FFF" />
                         </TouchableOpacity>
 
+                        
+                      
                         <TouchableOpacity>
                             <Ionicons name="settings-outline" size={24} color="#FFF" />
                         </TouchableOpacity>
@@ -54,6 +60,7 @@ const HomePage = () => {
                         marginVertical:20,
                         fontSize:16
                         }}>LATEST TRANSACTIONS</Text>
+
 
                         <View style={styles.mainContainer}>
                            <View style={{flexDirection:"row"}}>
@@ -110,11 +117,18 @@ const HomePage = () => {
                         </View>
 
                         <TouchableOpacity style={{alignSelf: 'flex-end', marginRight:30}}>
-                            <Text style={{color:"rgb(17, 181, 231),"}}> more » </Text>
+                            <Text style={{color:"rgb(17, 181, 231)"}}> more » </Text>
                         </TouchableOpacity>
+
+                          <TouchableOpacity onPress={() => router.push("/account")} style={{alignItems:"flex-end", marginRight:30, marginTop:10}}>
+                            <MaterialCommunityIcons name="greater-than" size={24} color="rgb(17, 181, 231)" />
+                        </TouchableOpacity>     
+
+
                         
                     
                 </View>
+                </ScrollView>
                 </SafeAreaView>  
   )
 }
@@ -129,7 +143,7 @@ const styles = StyleSheet.create({
   },
 
   top : {
-    flex : 0.9,
+    flex : 0.98,
     backgroundColor: "rgba(8, 10, 140, 0.87)",
     justifyContent:"center",
     alignItems: "center",
@@ -150,6 +164,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     borderRadius:20,
     gap:5,
+    marginBottom:20,
     
   },
 
